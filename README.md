@@ -4,10 +4,12 @@ The slickest chat app out there. Open-source and well-supported to boot.
 
 ![](http://github.com/cloudfuji/kandan/raw/master/public/preview.png)
 
-Setup
-======
+Deploying on Stackato
+=====================
 
-  stackato push -n
+    $ git clone git://github.com/Stackato-Apps/kandan.git
+    $ cd kandan
+    $ stackato push -n
 
 Your app should be up and running after a few minutes. Create a new account and start chatting!
 
