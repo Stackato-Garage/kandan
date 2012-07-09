@@ -5,6 +5,8 @@ framework:
   runtime: ruby19
 env:
  BUILDPACK_URL: git://github.com/ActiveState/stackato-buildpack-ruby.git
+ RAILS_ENV: "production"
+ RACK_ENV: "production"
 processes:
  web: bundle exec rails server
 mem: 256M
