@@ -4,9 +4,9 @@ framework:
   type: buildpack
   runtime: ruby19
 env:
- BUILDPACK_URL: git://github.com/ActiveState/stackato-buildpack-ruby.git
+  BUILDPACK_URL: git://github.com/ActiveState/stackato-buildpack-ruby.git
 processes:
- web: bundle exec rails server
+  web: bundle exec thin start -R config.ru -e $RACK_ENV -p $PORT
 mem: 256M
 min_version:
   client: 1.2.2
@@ -22,4 +22,4 @@ hooks:
     - ln -s "$STACKATO_FILESYSTEM"/attachments public/system/attachments
     # Precompile assets
     - bundle exec rake assets:precompile
-#   - bundle exec rake kandan:bootstrap
+    #- bundle exec rake kandan:bootstrap
