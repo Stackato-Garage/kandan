@@ -2,9 +2,6 @@ name: kandan
 instances: 1
 framework:
   type: buildpack
-  runtime: ruby19
-env:
-  BUILDPACK_URL: git://github.com/ActiveState/stackato-buildpack-ruby.git
 processes:
   web: bundle exec thin start -R config.ru -e $RACK_ENV -p $PORT
 mem: 256M
